@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'fredoka';
+}
+
+#fondoPrincipal {
+    height: 100% !important;
+    background: linear-gradient(to right, limegreen, skyblue, blue) !important;
+    background-blend-mode: screen;
+    
+}
+
+#fondoSecundario {
+    height: 500px !important;
+    background-color: #A78D75;
+    background-blend-mode: screen;
+    
+}
+
+.contenedorBanner {
+    position:absolute ;
+    align-content: center;
+    z-index: 3;
+    top:200px;
+    width: 500px;
+
+}
+
+.textoBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+    padding: 30px;
+
+}
+
+#fondoSecundario h1 {
+    font-size: 30px;
+
+    
+}
+
+.seccionAdopta {
+    height: 200px;
+    background: #fff;
+    background-blend-mode: screen;
+    
+}
+
+.imagenAdopta {
+    position: absolute;
+    left:700px;
+    top:225px;
+    z-index: 2;
+}
+
+.imagenHuella{
+    position: absolute;
+    left:500px;
+    top:225px;
+}
+
+.patitaDerecha{
+    position: absolute;
+    left:910px;
+    top:290px;
+}
+
+.catSandwich {
+    position: absolute;
+    width: 600px;
+    top: 450px;
+    right: 30%;
+}
+.catSandwich:hover {
+    transform: translateY(-14px); /* Desplazar hacia la izquierda al hacer hover */
+    background: url(../audio/cat-89108.mp3);
+}
+.catCute {
+    position: absolute;
+    top: 508px;
+    bottom: -12.07%;
+    transform: rotate(-15deg);
+    width: 300px;
+    
+}
+.catCute:hover{
+    animation: rotateAnimation 6s infinite linear; /* Aquí establecemos la animación */
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(-15deg); /* Ángulo inicial de rotación */
+    }
+    to {
+        transform: rotate(345deg); /* Ángulo final de rotación */
+    }
+}
+
+.catAngry {
+    position: absolute;
+    top: 500px;
+    width: 240px;
+    right:3px;
+   
+}
+
+.catSpy {
+    position: absolute;
+    width: 250px;
+    right:-38px;
+    top: 10px;
+    transform: rotate(-1deg);
+    
+}
+.catSpy:hover {
+    transform: translateX(-14px); /* Desplazar hacia la izquierda al hacer hover */
+}
+
+#areaDeQuizz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+
+.gatitoModal {
+    position: absolute;
+    width: 90px;
+    left:89%;
+    top:-80px;
+    z-index: 2;
+
+}
+
+
+ 
+#bg {
+    background-color: chocolate;
+}

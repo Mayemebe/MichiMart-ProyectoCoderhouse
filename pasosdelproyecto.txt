@@ -1,0 +1,50 @@
+Mis notas para el contenido del proyecto:
+
+1. Alert de BIENVENIDA.
+2. Ingresa tu nombre para Saludo. >  Importante que valide que si o si pongas nombre.
+3. ¿Que tipo de gatito te gustaría adoptar? Poner opciones Especifiar razas.
+4. Ingresa rango de edad del gatito que deseas adoptar.
+5. Arrojar Resultado de cuidados.
+
+
+Razas: Siamés, Persa, Gato esfinge, Maine Coon.
+Opciones: Rango de edades: 2 a 4 meses, 5 a 8 meses, 9 meses a 1 año, mas de 1 año.
+
+Combinaciones: Siamés, 2-4 meses > resultado: 
+
+Un gatito siamés de 2 a 4 meses es juguetón, curioso y vocal. 
+"Para cuidar a un gatito siamés de 2 a 4 meses, asegúrate de proporcionarle una alimentación
+ adecuada, visitas regulares al veterinario, un entorno seguro y limpio, juguetes estimulantes, 
+socialización gradual, entrenamiento positivo, identificación, climatización adecuada y 
+observación constante de su salud y comportamiento."
+
+
+Siamés de 5 a 8 meses: Para gatitos siameses de 5 a 8 meses, la atención se centra en su 
+desarrollo continuo y en asegurarse de que reciban una nutrición adecuada para el crecimiento. 
+Además, es importante mantener al día las visitas veterinarias para vacunas y chequeos regulares. 
+Continúa proporcionando un entorno seguro y estimulante, con juguetes apropiados para su edad. 
+Fomenta la socialización con otros animales y personas, y continúa con el entrenamiento positivo
+ para reforzar comportamientos deseables. Observa de cerca su crecimiento 
+ y desarrollo físico, y consulta al veterinario ante cualquier preocupación.
+
+
+Siamés de 9 meses a 1 año:
+
+Para gatitos siameses de 9 meses a 1 año, el enfoque está en su crecimiento y desarrollo hacia la adultez. Asegúrate de mantener una alimentación balanceada para gatos jóvenes en crecimiento, ajustando las porciones según las recomendaciones veterinarias. Continúa con las visitas regulares al veterinario para chequeos, vacunas y cuidado dental. Proporciona un entorno estimulante con juguetes interactivos y actividades para mantener su mente activa y cuerpo sano. Fomenta la socialización y el juego para fortalecer vínculos y habilidades sociales. Monitorea su salud de cerca y bríndale amor y atención para un desarrollo saludable.
+
+1 año: Para gatos siameses de más de un año, la atención se enfoca en mantener su salud y bienestar a largo plazo. Continúa con una dieta balanceada y ajusta las porciones según su nivel de actividad y peso. Programa visitas regulares al veterinario para chequeos anuales, vacunas y cuidado dental. Proporciona un ambiente enriquecido con juguetes variados y actividades que estimulen su mente y cuerpo. Fomenta el ejercicio regular para mantener su peso y condición física. Brinda atención especial a la higiene, como el cepillado regular y el cuidado de uñas. Monitorea su comportamiento y salud general, y consulta al veterinario ante cualquier cambio o preocupación.
+
+
+Gatitos Persa
+
+Persa, 2-4 meses:
+Un gatito persa de 2 a 4 meses es curioso, tranquilo y cariñoso. Para cuidar a un gatito persa de esta edad, asegúrate de proporcionarle una alimentación adecuada para su crecimiento, visitas regulares al veterinario para vacunas y chequeos, un entorno seguro y tranquilo, juguetes suaves y estimulantes, socialización gradual, entrenamiento positivo para comportamientos deseables, identificación adecuada y observación constante de su salud y desarrollo.
+
+Persa, 5-8 meses:
+Para gatitos persas de 5 a 8 meses, es importante seguir enfocándose en su crecimiento y desarrollo. Asegúrate de proporcionarles una dieta equilibrada para su edad y actividad, con porciones adecuadas según las recomendaciones veterinarias. Continúa con las visitas regulares al veterinario para chequeos y vacunas, y presta atención a su higiene dental. Proporciona un ambiente tranquilo y estimulante con juguetes seguros y apropiados para su edad. Fomenta la socialización con otros animales y personas, y continúa con el entrenamiento para comportamientos positivos. Observa su crecimiento y desarrollo físico de cerca, consultando al veterinario ante cualquier preocupación.
+
+Persa, 9 meses a 1 año:
+Para gatitos persas de 9 meses a 1 año, enfócate en su transición a la adultez. Proporciona una alimentación balanceada según sus necesidades de crecimiento y actividad, ajustando las porciones según lo recomendado por el veterinario. Mantén las visitas regulares al veterinario para chequeos, vacunas y cuidado dental. Ofrece un ambiente estimulante con juguetes interactivos y actividades que fomenten su mente y cuerpo activos. Continúa con la socialización y el entrenamiento para reforzar comportamientos positivos. Monitorea su salud de cerca y bríndale amor y atención para un desarrollo saludable.
+
+Persa, más de 1 año:
+Para gatos persas de más de un año, la atención se centra en mantener su salud y bienestar a largo plazo. Proporciona una dieta adecuada para su edad y nivel de actividad, ajustando las porciones según sea necesario. Programa visitas regulares al veterinario para chequeos anuales, vacunas y cuidado dental continuo. Ofrece un ambiente enriquecido con juguetes variados y actividades que estimulen su mente y cuerpo. Fomenta el ejercicio regular para mantener su peso y condición física. Presta atención especial a la higiene, incluyendo el cepillado regular y el cuidado de uñas. Monitorea su comportamiento y salud general, consultando al veterinario ante cualquier cambio o preocupación.
