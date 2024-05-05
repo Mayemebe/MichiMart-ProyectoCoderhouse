@@ -1,136 +1,97 @@
-function calcularMensaje(raza, edadAdopcion) {
-    let mensaje = "";
-    if (raza==="Siamés") {
-
-    switch (parseInt(edadAdopcion)) {
-        case 1:
-            mensaje = "Mensaje para gatitos de 2 a 4 meses.";
-            break;
-        case 2:
-            mensaje = "Mensaje para gatitos de 5 a 8 meses.";
-            break;
-        case 3:
-            mensaje = "Mensaje para gatitos de 9 meses a 1 año.";
-            break;
-        case 4:
-            mensaje = "Mensaje para gatitos de más de 1 año.";
-            break;
-        default:
-            mensaje = "Edad no válida para gatitos.";
+const articulos = [
+    {
+        id: 1,
+        producto: "Arenero",
+        color: "Azul",
+        tamaño: "mediano",
+        precio: 400,
+    },
+    {
+        id: 2,
+        producto: "Arena Scoop Away",
+        color: "morado",
+        tamaño: "grande",
+        precio: 800,
+    },
+    {
+        id: 3,
+        producto: "Alimento Minino Plus",
+        color: "verde",
+        tamaño: "chico",
+        precio: 160,
+    },
+    {
+        id: 4,
+        producto: "Rascador Premium",
+        color: "café",
+        tamaño: "mediano",
+        precio: 700,
     }
+];
 
-}else if (raza==="Persa"){
-    switch (parseInt(edadAdopcion)) {
-        case 1:
-            mensaje = "Mensaje para gatitos Persa de 2 a 4 meses.";
-            break;
-        case 2:
-            mensaje = "Mensaje para gatitos Persa de 5 a 8 meses.";
-            break;
-        case 3:
-            mensaje = "Mensaje para gatitos Persa de 9 meses a 1 año.";
-            break;
-        case 4:
-            mensaje = "Mensaje para gatitos Persa de más de 1 año.";
-            break;
-        default:
-            mensaje = "Edad no válida para Persa gatitos.";
+let carrito = [];
+console.log("se agrega al carrito");
 
-}
-}else if (raza==="Esfinge"){
-    switch (parseInt(edadAdopcion)) {
-        case 1:
-            mensaje = "Mensaje para gatitos Esfinge de 2 a 4 meses.";
-            break;
-        case 2:
-            mensaje = "Mensaje para gatitos Esfinge de 5 a 8 meses.";
-            break;
-        case 3:
-            mensaje = "Mensaje para gatitos Esfinge de 9 meses a 1 año.";
-            break;
-        case 4:
-            mensaje = "Mensaje para gatitos Esfinge de más de 1 año.";
-            break;
-        default:
-            mensaje = "Edad no válida para Esfinge gatitos.";
+let elegir;
 
+elegir = prompt("Bienvenido a MichiMart, ¿Deseas comprar algún producto?");
+
+while (elegir !== "si" && elegir !== "no") {
+    alert("Por favor ingresa si o no");
+    elegir = prompt("Por favor ingresa si o no");
 }
 
-}else if (raza==="Maine Coon"){
-    switch (parseInt(edadAdopcion)) {
-        case 1:
-            mensaje = "Mensaje para gatitos Maine Coon de 2 a 4 meses.";
-            break;
-        case 2:
-            mensaje = "Mensaje para gatitos Maine Coon de 5 a 8 meses.";
-            break;
-        case 3:
-            mensaje = "Mensaje para gatitos Maine Coon de 9 meses a 1 año.";
-            break;
-        case 4:
-            mensaje = "Mensaje para gatitos Maine Coon de más de 1 año.";
-            break;
-        default:
-            mensaje = "Edad no válida para Maine Coon gatitos.";
+if (elegir === "si") {
+    alert("¡Genial! A continuación verás nuestros productos disponibles");
+    console.log(articulos);
+    let todosLosProductos = articulos.map(
+        (producto) => producto.producto + " (" + producto.color + ") - " + producto.tamaño + " - $" + producto.precio + "\n"
+    );
+    alert(todosLosProductos.join("-"));
 
+    let seleccion;
+    do {
+        seleccion = prompt("Elige un producto:\n1. Arenero Premium\n2. Arena Scoop Away\n3. Alimento Minino Plus\n4. Rascador Premium\nPara salir del carrito, ingrese 0.");
+
+        if (seleccion == "0") {
+            alert("Gracias, vuelva pronto!");
+            console.log("mensaje salir");
+            break;
+        }
+
+        switch (seleccion) {
+            case "1":
+                agregarAlCarrito(articulos.find(producto => producto.id === 1));
+                break;
+            case "2":
+                agregarAlCarrito(articulos.find(producto => producto.id === 2));
+                break;
+            case "3":
+                agregarAlCarrito(articulos.find(producto => producto.id === 3));
+                break;
+            case "4":
+                agregarAlCarrito(articulos.find(producto => producto.id === 4));
+                break;
+            default:
+                alert("Selecciona una opción válida.");
+                break;
+        }
+    } while (seleccion !== "0");
+} else {
+    alert("Gracias, vuelva pronto");
 }
 
-}
-    return mensaje;
-}
+function agregarAlCarrito(producto) {
+    carrito.push(producto);
+    alert(producto.producto + " ha sido añadido al carrito.");
 
-let nombreUsuario;
-do {
-    nombreUsuario = prompt("Hola Bienvenid@ a Michilandia, Ingresa tu nombre para Iniciar");
-    if (nombreUsuario !== "") {
-        alert("Bienvenid@ " + nombreUsuario);
-    } else {
-        alert("Debes ingresar un nombre para iniciar");
-        console.log("ingresanombre");
-    }
-} while (nombreUsuario === "");
+    let total = 0;
+    let mensaje = "Tu carrito actual es:\n";
+    carrito.forEach(item => {
+        mensaje += item.producto + " (" + item.color + ") - " + item.tamaño + " - $" + item.precio + "\n";
+        total += item.precio;
+    });
 
-alert("Ahora bien, vamos a relizar una serie de preguntas para determinar los cuidados que debe tener el gatito que quieres adoptar");
-
-let numeroGatito = "";
-while (numeroGatito === "") {
-    numeroGatito = prompt("Selecciona del 1 al 4 qué raza de gatito prefieres:\n1. Gatito Siamés\n2. Gatito Persa\n3. Gatito Esfinge\n4. Gatito Maine Coon");
-}
-
-let nombreRaza;
-let edad;
-
-switch (parseInt(numeroGatito)) {
-    case 1:
-        nombreRaza = "Siamés";
-        alert("Perfecto el gatito Siamés es uno de los favoritos, sigamos");
-        console.log("gatito Siamés exitoso");
-        edad = prompt("Ingresa la edad del gatito a adoptar:\n1. 2-4 meses\n2. 5 a 8 meses\n3. 9 meses a 1 año\n4. Más de 1 año");
-        alert(calcularMensaje(nombreRaza, edad));
-        console.log(calcularMensaje(nombreRaza, edad));
-        break;
-    case 2:
-        nombreRaza = "Persa";
-        alert("Perfecto el gatito Persa es uno de los favoritos, sigamos");
-        console.log("gatito Persa exitoso");
-        edad = prompt("Ingresa la edad del gatito a adoptar:\n1. 2-4 meses\n2. 5 a 8 meses\n3. 9 meses a 1 año\n4. Más de 1 año");
-        alert(calcularMensaje(nombreRaza, edad));
-        console.log(calcularMensaje(nombreRaza, edad));
-        break;
-    case 3:
-        nombreRaza = "Esfinge";
-        alert("Perfecto el gatito Esfinge es uno de los favoritos, sigamos");
-        console.log("gatito Esfinge exitoso");
-        edad = prompt("Ingresa la edad del gatito a adoptar:\n1. 2-4 meses\n2. 5 a 8 meses\n3. 9 meses a 1 año\n4. Más de 1 año");
-        alert(calcularMensaje(nombreRaza, edad));
-        console.log(calcularMensaje(nombreRaza, edad));
-        break;
-    case 4:
-        nombreRaza = "Maine Coon";
-        alert("Perfecto el gatito Maine Coon es uno de los favoritos, sigamos");
-        console.log("gatito Maine Coon exitoso");
-        edad = prompt("Ingresa la edad del gatito a adoptar:\n1. 2-4 meses\n2. 5 a 8 meses\n3. 9 meses a 1 año\n4. Más de 1 año");
-        alert(calcularMensaje(nombreRaza, edad));
-        console.log(calcularMensaje(nombreRaza, edad));
-        break;
+    mensaje += "Total: $" + total;
+    alert(mensaje);
 }

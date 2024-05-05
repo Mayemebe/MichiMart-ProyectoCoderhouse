@@ -8,14 +8,12 @@
     height: 100% !important;
     background: linear-gradient(to right, limegreen, skyblue, blue) !important;
     background-blend-mode: screen;
-    
 }
 
 #fondoSecundario {
     height: 500px !important;
     background-color: #A78D75;
     background-blend-mode: screen;
-    
 }
 
 .contenedorBanner {
@@ -24,7 +22,6 @@
     z-index: 3;
     top:200px;
     width: 500px;
-
 }
 
 .textoBanner {
@@ -33,20 +30,16 @@
     align-items: center;
     align-content: flex-start;
     padding: 30px;
-
 }
 
 #fondoSecundario h1 {
     font-size: 30px;
-
-    
 }
 
-.seccionAdopta {
+.seccionArticulos {
     height: 200px;
     background: #fff;
     background-blend-mode: screen;
-    
 }
 
 .imagenAdopta {
@@ -84,7 +77,6 @@
     bottom: -12.07%;
     transform: rotate(-15deg);
     width: 300px;
-    
 }
 .catCute:hover{
     animation: rotateAnimation 6s infinite linear; /* Aquí establecemos la animación */
@@ -104,7 +96,6 @@
     top: 500px;
     width: 240px;
     right:3px;
-   
 }
 
 .catSpy {
@@ -113,7 +104,6 @@
     right:-38px;
     top: 10px;
     transform: rotate(-1deg);
-    
 }
 .catSpy:hover {
     transform: translateX(-14px); /* Desplazar hacia la izquierda al hacer hover */
@@ -127,18 +117,87 @@
     margin-top: 70px;
 }
 
-
 .gatitoModal {
     position: absolute;
     width: 90px;
     left:89%;
     top:-80px;
     z-index: 2;
-
 }
 
-
- 
 #bg {
     background-color: chocolate;
 }
+
+/* Media queries para hacer el sitio responsive */
+
+@media only screen and (max-width: 768px) {
+    .contenedorBanner {
+        width: 100%;
+        top: 150px;
+    }
+    
+    .catSandwich {
+        width: 100%;
+        top: 400px;
+    }
+    
+    .catCute {
+        top: 470px;
+        width: 150px; /* Ajustar el ancho para dispositivos más pequeños */
+    }
+    
+    .gatitoModal {
+        width: 60px; /* Ajustar el ancho para dispositivos más pequeños */
+        left: 85%; /* Cambiar la posición lateral */
+        top: -50px; /* Ajustar la posición vertical */
+    }
+
+
+    .imagenAdopta {
+        position: absolute;
+        left:50px;
+        top:300px;
+        z-index: 2;
+        width: 280px;
+    }
+    
+    .imagenHuella{
+        position: absolute;
+        left:-90px;
+        top:190px;
+        width: 250px;
+    }
+
+    .patitaDerecha{
+        position: absolute;
+        left:90px;
+        top:290px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .contenedorBanner {
+        width: 100%;
+        top: 100px;
+    }
+    
+    .catSandwich {
+        width: 100%;
+        top: 350px;
+    }
+    
+    .catCute {
+        top: 420px;
+        width: 120px; /* Ajustar el ancho para dispositivos más pequeños */
+    }
+    
+    .gatitoModal {
+        width: 50px; /* Ajustar el ancho para dispositivos más pequeños */
+        left: 85%; /* Cambiar la posición lateral */
+        top: -30px; /* Ajustar la posición vertical */
+    }
+}
+
+
+
