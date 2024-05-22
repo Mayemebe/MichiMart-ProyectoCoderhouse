@@ -1,97 +1,95 @@
-const articulos = [
-    {
-        id: 1,
-        producto: "Arenero",
-        color: "Azul",
-        tamaño: "mediano",
-        precio: 400,
-    },
-    {
-        id: 2,
-        producto: "Arena Scoop Away",
-        color: "morado",
-        tamaño: "grande",
-        precio: 800,
-    },
-    {
-        id: 3,
-        producto: "Alimento Minino Plus",
-        color: "verde",
-        tamaño: "chico",
-        precio: 160,
-    },
-    {
-        id: 4,
-        producto: "Rascador Premium",
-        color: "café",
-        tamaño: "mediano",
-        precio: 700,
+const container = document.getElementById("container");
+const carrito = document.getElementById("carrito");
+
+let mostrar = false;
+
+let carritoCompras = JSON.parse(localStorage.getItem("carrito")) || [];
+
+
+function agregarCarrito(id) {
+    const agregarArticulo = articulos.find(el => el.id === id);
+    if (carritoCompras.some(element => element.id === agregarArticulo.id)) {
+        alert("El artículo ya está agregado");
+    } else {
+        carritoCompras.push(agregarArticulo);
+        localStorage.setItem("carrito", JSON.stringify(carritoCompras));
+        alert("Producto agregado al carrito: " + agregarArticulo.producto);
+        
+        let total = 0;
+        let mensaje = "Tu carrito actual es:\n";
+        carritoCompras.forEach(item => {
+            mensaje += item.producto + " (" + item.color + ") - " + item.tamaño + " - $" + item.precio + "\n";
+            total += item.precio;
+        });
+
+        mensaje += "Total: $" + total;
+        alert(mensaje);
+
+        document.getElementById('totalCarrito').textContent = "Total: $" + total;
     }
-];
-
-let carrito = [];
-console.log("se agrega al carrito");
-
-let elegir;
-
-elegir = prompt("Bienvenido a MichiMart, ¿Deseas comprar algún producto?");
-
-while (elegir !== "si" && elegir !== "no") {
-    alert("Por favor ingresa si o no");
-    elegir = prompt("Por favor ingresa si o no");
 }
+     
 
-if (elegir === "si") {
-    alert("¡Genial! A continuación verás nuestros productos disponibles");
-    console.log(articulos);
-    let todosLosProductos = articulos.map(
-        (producto) => producto.producto + " (" + producto.color + ") - " + producto.tamaño + " - $" + producto.precio + "\n"
-    );
-    alert(todosLosProductos.join("-"));
-
-    let seleccion;
-    do {
-        seleccion = prompt("Elige un producto:\n1. Arenero Premium\n2. Arena Scoop Away\n3. Alimento Minino Plus\n4. Rascador Premium\nPara salir del carrito, ingrese 0.");
-
-        if (seleccion == "0") {
-            alert("Gracias, vuelva pronto!");
-            console.log("mensaje salir");
-            break;
-        }
-
-        switch (seleccion) {
-            case "1":
-                agregarAlCarrito(articulos.find(producto => producto.id === 1));
-                break;
-            case "2":
-                agregarAlCarrito(articulos.find(producto => producto.id === 2));
-                break;
-            case "3":
-                agregarAlCarrito(articulos.find(producto => producto.id === 3));
-                break;
-            case "4":
-                agregarAlCarrito(articulos.find(producto => producto.id === 4));
-                break;
-            default:
-                alert("Selecciona una opción válida.");
-                break;
-        }
-    } while (seleccion !== "0");
-} else {
-    alert("Gracias, vuelva pronto");
-}
-
-function agregarAlCarrito(producto) {
-    carrito.push(producto);
-    alert(producto.producto + " ha sido añadido al carrito.");
-
-    let total = 0;
-    let mensaje = "Tu carrito actual es:\n";
-    carrito.forEach(item => {
-        mensaje += item.producto + " (" + item.color + ") - " + item.tamaño + " - $" + item.precio + "\n";
-        total += item.precio;
+function mostrarProductosEnCarrito() {
+    carrito.innerHTML = ""; 
+    carritoCompras.forEach(producto => {
+        const item = document.createElement("p");
+        item.innerText = producto.producto;
+        carrito.appendChild(item);
     });
-
-    mensaje += "Total: $" + total;
-    alert(mensaje);
 }
+
+function crearCard(producto) {
+    const cardContainer = document.createElement("div");
+    cardContainer.className ="cardContainer";
+    
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const titulo = document.createElement("p");
+    titulo.innerText = producto.producto;
+
+    const imagen = document.createElement("img");
+    imagen.src = producto.imagen;
+    imagen.className = "imagen";
+
+    const precio = document.createElement("p");
+    precio.innerText = `$${producto.precio}`;
+    precio.className = "titulo";
+
+    const botonAgregar = document.createElement("button");
+    botonAgregar.innerText = "Agregar";
+    botonAgregar.className = "btn-add";
+    botonAgregar.onclick = () => {
+        agregarCarrito(producto.id);
+        mostrarProductosEnCarrito(); 
+    };
+
+    card.appendChild(titulo);
+    card.appendChild(imagen);
+    card.appendChild(precio);
+    card.appendChild(botonAgregar);
+
+    container.appendChild(card);
+};
+
+articulos.forEach(el => crearCard(el));
+
+
+function vaciarCarrito(index){
+    carritoCompras = [];
+    localStorage.setItem("carrito", JSON.stringify(carritoCompras));
+    document.getElementById('totalCarrito').textContent = "Total: $0";
+    mostrarProductosEnCarrito();
+};
+
+const vaciarCarritoBtn = document.createElement("button");
+vaciarCarritoBtn.innerText ="Vaciar carrito";
+
+
+vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
+document.body.appendChild(vaciarCarritoBtn);
+vaciarCarritoBtn.className = "botonVaciar"
+
+
+

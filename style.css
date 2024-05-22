@@ -4,14 +4,14 @@
     font-family: 'fredoka';
 }
 
-#fondoPrincipal {
-    height: 100% !important;
-    background: linear-gradient(to right, limegreen, skyblue, blue) !important;
-    background-blend-mode: screen;
+body {
+    background-color:blanchedalmond;
+  
 }
 
+
 #fondoSecundario {
-    height: 500px !important;
+    height: 500px;
     background-color: #A78D75;
     background-blend-mode: screen;
 }
@@ -68,7 +68,7 @@
     right: 30%;
 }
 .catSandwich:hover {
-    transform: translateY(-14px); /* Desplazar hacia la izquierda al hacer hover */
+    transform: translateY(-14px); 
     background: url(../audio/cat-89108.mp3);
 }
 .catCute {
@@ -79,7 +79,7 @@
     width: 300px;
 }
 .catCute:hover{
-    animation: rotateAnimation 6s infinite linear; /* Aquí establecemos la animación */
+    animation: rotateAnimation 6s infinite linear;
 }
 
 @keyframes rotateAnimation {
@@ -106,7 +106,7 @@
     transform: rotate(-1deg);
 }
 .catSpy:hover {
-    transform: translateX(-14px); /* Desplazar hacia la izquierda al hacer hover */
+    transform: translateX(-14px); 
 }
 
 #areaDeQuizz {
@@ -129,7 +129,6 @@
     background-color: chocolate;
 }
 
-/* Media queries para hacer el sitio responsive */
 
 @media only screen and (max-width: 768px) {
     .contenedorBanner {
@@ -200,4 +199,61 @@
 }
 
 
+.imagen {
+    width:160px;
+}
 
+
+
+.carritoicono{
+    position: absolute;
+    left:1300px;
+    top:20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.container-fluid{
+    background-color: #A78D75;
+}
+
+.card {
+    width: calc(25% - 20px); 
+    margin-bottom: 20px; 
+    align-items: center;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    padding: 10px; 
+    margin: 10px;
+    
+}
+
+.btn-add {
+    width: 50%; 
+    height: 40px;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); 
+    }
+}
+
+.botonVaciar {
+    margin:20px;
+}
+
+
+
+ 
