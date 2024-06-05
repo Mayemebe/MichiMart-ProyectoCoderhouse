@@ -9,6 +9,11 @@ body {
   
 }
 
+h1 {
+    font-family: 'poppins';
+    font-weight: lighter;
+}
+
 
 #fondoSecundario {
     height: 500px;
@@ -254,6 +259,23 @@ body {
     margin:20px;
 }
 
+.barraPagos {
 
+    background-color:#9786AC;
+    
+}
 
+.contenedorPagos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 120px;
+    
+}
+
+.imagenesPagos {
+    flex-direction: column-reverse;
+    align-items: center;
+}
  

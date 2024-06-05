@@ -34,5 +34,49 @@ const articulos = [
         precio: 700,
         imagen: "./imagenes/rascadorpremium.jpeg",
         stock: true,
-    }
+    },
+
+    {
+
+    id: 5,
+    producto: "Rascador Premium",
+    color: "café",
+    tamaño: "mediano",
+    precio: 700,
+    imagen: "./imagenes/rascadorpremium.jpeg",
+    stock: true,
+    },
+
+    {
+
+        id: 5,
+        producto: "Rascador Premium",
+        color: "café",
+        tamaño: "mediano",
+        precio: 700,
+        imagen: "./imagenes/rascadorpremium.jpeg",
+        stock: true,
+        },
+
+        {
+
+            id: 5,
+            producto: "Rascador Premium",
+            color: "café",
+            tamaño: "mediano",
+            precio: 700,
+            imagen: "./imagenes/rascadorpremium.jpeg",
+            stock: true,
+            },
+
+            {
+
+                id: 5,
+                producto: "Rascador Premium",
+                color: "café",
+                tamaño: "mediano",
+                precio: 700,
+                imagen: "./imagenes/rascadorpremium.jpeg",
+                stock: true,
+                },
 ];
