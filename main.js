@@ -34,7 +34,6 @@ function mostrarProductosEnCarrito() {
   });
 }
 
-
 function actualizarCarritoVisual() {
   mostrarProductosEnCarrito();
 
@@ -78,39 +77,36 @@ function crearCard(producto) {
   container.appendChild(card);
 }
 
-const url = 'https://establo.mx/api.php';
-const apiKey = '7d8f9s0d7f98sd7f98s7df';
-const apiSecret = 'pXN3tQZvbHjgs5fR2nYDz6TqL8m1kE';
+const url = "https://establo.mx/api.php";
+const apiKey = "7d8f9s0d7f98sd7f98s7df";
+const apiSecret = "pXN3tQZvbHjgs5fR2nYDz6TqL8m1kE";
 
 // Configurar encabezados
 const headers = {
-    'ApiKey': apiKey,
-    'ApiSecret': apiSecret
+  ApiKey: apiKey,
+  ApiSecret: apiSecret,
 };
 
 // Configurar la solicitud
 const requestOptions = {
-    method: 'GET',
-    headers: headers
+  method: "GET",
+  headers: headers,
 };
 
 // Hacer la solicitud
 fetch(url, requestOptions)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('La solicitud no fue exitosa: ' + response.status);
-        }
-        return response.json();
-    })
-    .then(data => {
-        data.forEach((el) => crearCard(el));
-    })
-    .catch(error => {
-        console.error('Hubo un problema con la solicitud fetch:', error.message);
-    });
-
-
-
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("La solicitud no fue exitosa: " + response.status);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    data.forEach((el) => crearCard(el));
+  })
+  .catch((error) => {
+    console.error("Hubo un problema con la solicitud fetch:", error.message);
+  });
 
 function vaciarCarrito() {
   carritoCompras = [];
@@ -129,5 +125,3 @@ totalCarrito.id = "totalCarrito";
 document.body.appendChild(totalCarrito);
 
 actualizarCarritoVisual();
-
-     
