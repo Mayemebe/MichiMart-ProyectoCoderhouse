@@ -38,21 +38,21 @@ const articulos = [
 
   {
     id: 5,
-    producto: "Rascador Premium",
+    producto: "Rascador de caja",
     color: "café",
     tamaño: "mediano",
-    precio: 700,
-    imagen: "./imagenes/rascadorpremium.jpeg",
+    precio: 100,
+    imagen: "./imagenes/rascadorcaja.jpeg",
     stock: true,
   },
 
   {
     id: 6,
-    producto: "Jueguetes",
+    producto: "Juguetes",
     color: "café",
     tamaño: "mediano",
-    precio: 700,
-    imagen: "./imagenes/rascadorpremium.jpeg",
+    precio: 250,
+    imagen: "./imagenes/juguetesgato.jpeg",
     stock: true,
   },
 
@@ -61,8 +61,8 @@ const articulos = [
     producto: "Cama gatito",
     color: "café",
     tamaño: "mediano",
-    precio: 700,
-    imagen: "./imagenes/rascadorpremium.jpeg",
+    precio: 350,
+    imagen: "./imagenes/camagatito.jpeg",
     stock: true,
   },
 
@@ -71,8 +71,8 @@ const articulos = [
     producto: "Catnip",
     color: "café",
     tamaño: "mediano",
-    precio: 700,
-    imagen: "./imagenes/rascadorpremium.jpeg",
+    precio: 80,
+    imagen: "./imagenes/catnip.jpeg",
     stock: true,
   },
 ];

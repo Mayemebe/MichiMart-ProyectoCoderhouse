@@ -1,3 +1,42 @@
+const url = 'https://establo.mx/api.php';
+const apiKey = '7d8f9s0d7f98sd7f98s7df';
+const apiSecret = 'pXN3tQZvbHjgs5fR2nYDz6TqL8m1kE';
+
+// Configurar encabezados
+const headers = {
+    'ApiKey': apiKey,
+    'ApiSecret': apiSecret
+};
+
+// Configurar la solicitud
+const requestOptions = {
+    method: 'GET',
+    headers: headers,
+    mode: "cors",
+};
+
+// Hacer la solicitud
+fetch(url, requestOptions)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('La solicitud no fue exitosa: ' + response.status);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data); // Manejar los datos devueltos por la API
+    })
+    .catch(error => {
+        console.error('Hubo un problema con la solicitud fetch:', error.message);
+    });
+
+
+
+// fetch("https://establo.mx/api.php")
+// .then(response => response.json())
+// .then(data => console.log(data))
+
+
 const container = document.getElementById("container");
 const carrito = document.getElementById("carrito");
 
@@ -97,3 +136,5 @@ totalCarrito.id = "totalCarrito";
 document.body.appendChild(totalCarrito);
 
 actualizarCarritoVisual();
+
+
