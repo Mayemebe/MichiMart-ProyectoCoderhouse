@@ -201,28 +201,28 @@ h1 {
 
 .contenedorPagos {
   display: flex;
-  flex-wrap: nowrap; /* No permitir que las imágenes se envuelvan */
+  flex-wrap: nowrap; 
   justify-content: space-evenly;
   align-items: center;
-  overflow-x: auto; /* Permitir desplazamiento horizontal */
+  overflow-x: auto; 
 }
 
 .imagenesPagos {
-  display: flex; /* Asegurarse de que use flexbox */
+  display: flex; 
   justify-content: space-evenly;
   align-items: center;
-  margin: 5px; /* Espaciado entre imágenes */
+  margin: 5px; 
 }
 
 @media screen and (max-width: 768px) {
   .contenedorPagos {
-    flex-wrap: wrap; /* Permitir envoltura en pantallas más pequeñas */
+    flex-wrap: wrap; 
   }
 }
 
 @media screen and (max-width: 768px) {
   .contenedorPagos img {
-    flex-wrap: nowrap; /* Permitir envoltura en pantallas más pequeñas */
+    flex-wrap: nowrap; 
     width: 80px;
   }
 }
