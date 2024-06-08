@@ -1,3 +1,31 @@
+const url = "https://establo.mx/api.php";
+const apiKey = "7d8f9s0d7f98sd7f98s7df";
+const apiSecret = "pXN3tQZvbHjgs5fR2nYDz6TqL8m1kE";
+
+const headers = {
+  ApiKey: apiKey,
+  ApiSecret: apiSecret,
+};
+
+const requestOptions = {
+  method: "GET",
+  headers: headers,
+};
+
+fetch(url, requestOptions)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("La solicitud no fue exitosa: " + response.status);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    data.forEach((el) => crearCard(el));
+  })
+  .catch((error) => {
+    console.error("Hubo un problema con la solicitud fetch:", error.message);
+  });
+
 const container = document.getElementById("container");
 const carrito = document.getElementById("carrito");
 
@@ -32,8 +60,9 @@ function mostrarProductosEnCarrito() {
     item.innerText = `${producto.producto} (${producto.color}) - ${producto.tamaño} - $${producto.precio} x ${producto.cantidad}`;
     carrito.appendChild(item);
   });
-}
 
+  carrito.classList.add("resumen-compra-contenedor");
+}
 
 function actualizarCarritoVisual() {
   mostrarProductosEnCarrito();
@@ -78,41 +107,28 @@ function crearCard(producto) {
   container.appendChild(card);
 }
 
-const url = 'https://establo.mx/api.php';
-const apiKey = '7d8f9s0d7f98sd7f98s7df';
-const apiSecret = 'pXN3tQZvbHjgs5fR2nYDz6TqL8m1kE';
-
-// Configurar encabezados
-const headers = {
-    'ApiKey': apiKey,
-    'ApiSecret': apiSecret
-};
-
-// Configurar la solicitud
-const requestOptions = {
-    method: 'GET',
-    headers: headers
-};
-
-// Hacer la solicitud
-fetch(url, requestOptions)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('La solicitud no fue exitosa: ' + response.status);
-        }
-        return response.json();
-    })
-    .then(data => {
-        data.forEach((el) => crearCard(el));
-    })
-    .catch(error => {
-        console.error('Hubo un problema con la solicitud fetch:', error.message);
-    });
-
-
-
-
 function vaciarCarrito() {
+  carritoCompras = [];
+  localStorage.setItem("carrito", JSON.stringify(carritoCompras));
+  actualizarCarritoVisual();
+}
+
+function comprar() {
+  if (carritoCompras.length === 0) {
+    Swal.fire({
+      icon: "error",
+      title: "Carrito vacío",
+      text: "No hay productos en el carrito para comprar.",
+    });
+    return;
+  }
+
+  Swal.fire({
+    icon: "success",
+    title: "Compra realizada",
+    text: "Gracias por su compra.",
+  });
+
   carritoCompras = [];
   localStorage.setItem("carrito", JSON.stringify(carritoCompras));
   actualizarCarritoVisual();
@@ -120,6 +136,7 @@ function vaciarCarrito() {
 
 const vaciarCarritoBtn = document.createElement("button");
 vaciarCarritoBtn.innerText = "Vaciar carrito";
+vaciarCarritoBtn.className = "botonVaciar";
 vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
 document.body.appendChild(vaciarCarritoBtn);
 vaciarCarritoBtn.className = "botonVaciar";
@@ -128,6 +145,11 @@ const totalCarrito = document.createElement("p");
 totalCarrito.id = "totalCarrito";
 document.body.appendChild(totalCarrito);
 
-actualizarCarritoVisual();
+const comprarBtn = document.createElement("button");
+comprarBtn.innerText = "Comprar";
+comprarBtn.className = "botonComprar";
+comprarBtn.addEventListener("click", comprar);
+document.body.appendChild(comprarBtn);
+comprarBtn.className = "botonComprar";
 
-     
+actualizarCarritoVisual();
